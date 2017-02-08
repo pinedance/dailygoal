@@ -1,1 +1,1 @@
-angular.module("dailygoal", ['ngRoute'])
+angular.module("dailygoal", ['ngRoute', 'ngCookies', 'ui.bootstrap'])

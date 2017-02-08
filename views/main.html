@@ -1,11 +1,30 @@
-<div class="section">
+<div class="section" ng-show="auth">
 	<div class="container">
 	<div class="row">
-		<h1>{{ date }}<i class="fa fa-spinner" ng-class="{'fa-pulse': loading}" aria-hidden="true"></i></h1>
+		<div class="col-md-6">
+			<h1>{{ date }} <i class="fa fa-spinner" ng-class="{'fa-pulse': loading}" aria-hidden="true"></i></h1>
+			<!-- date picker -->
+			<!-- <div style="display:inline-block; min-height:290px;"> -->
+			<div style="display:inline-block;">
+	  			<div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></div>
+			</div>
+
+			<ul class="pager">
+				<li><a ng-href="#/{{ go('prev') }}">←	Prev</a></li>
+				<li><a ng-click="today()"> Today </a></li>
+				<li><a ng-click="jump()"> Jump </a></li>
+				<li><a ng-href="#/{{ go('next') }}">Next	→</a></li>
+			</ul>
+		</div>
+		<!-- date picker end -->
 	</div>
+
+	<hr />
+
 	<div class="row">
 		<div class="col-md-4">
 		<blockquote>
+			<p>Goal A</p>
 			<p>
 				<input id="checkA" type="checkbox"
 					ng-model="goaldata.values[0][4]"
@@ -13,13 +32,14 @@
 				{{ goaldata.values[0][1] }}
 			</p>
 			<footer>
-				<a ng-href="goaldata.values[0][3]" target="_blank">{{ goaldata.values[0][2] }}</a>
+				<a ng-href="{{goaldata.values[0][3]}}" target="_blank">{{ goaldata.values[0][2] }}</a>
 			</footer>
 		</blockquote>
 		</div>
 
 		<div class="col-md-4">
 		<blockquote>
+			<p>Goal B</p>
 			<p>
 				<input id="checkB" type="checkbox"
 					ng-model="goaldata.values[0][8]"
@@ -27,13 +47,14 @@
 				{{ goaldata.values[0][5] }}
 			</p>
 			<footer>
-				<a ng-href="goaldata.values[0][7]" target="_blank">{{ goaldata.values[0][6] }}</a>
+				<a ng-href="{{goaldata.values[0][7]}}" target="_blank">{{ goaldata.values[0][6] }}</a>
 			</footer>
 		</blockquote>
 		</div>
 
 		<div class="col-md-4">
 		<blockquote>
+			<p>Goal C</p>
 			<p>
 				<input id="checkC" type="checkbox"
 					ng-model="goaldata.values[0][12]"
@@ -41,24 +62,10 @@
 				{{ goaldata.values[0][9] }}
 			</p>
 			<footer>
-				<a ng-href="goaldata.values[0][11]" target="_blank">{{ goaldata.values[0][10] }}</a>
+				<a ng-href="{{goaldata.values[0][11]}}" target="_blank">{{ goaldata.values[0][10] }}</a>
 			</footer>
 		</blockquote>
 
-		</div>
-	</div>
-
-
-	<div class="row">
-		<div class="col-md-12">
-		<ul class="pager">
-			<li>
-			<a ng-href="#/{{ go('prev') }}">←	Prev</a>
-			</li>
-			<li>
-			<a ng-href="#/{{ go('next') }}">Next	→</a>
-			</li>
-		</ul>
 		</div>
 	</div>
 

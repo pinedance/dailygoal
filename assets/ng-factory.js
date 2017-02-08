@@ -41,6 +41,12 @@ angular.module("dailygoal")
 		return monthAgo
 	}
 
+	_day.to_date = function( date_string ){ // "2017-02-06"
+		var _day = date_string.split("-")
+		var day = [ _day[1], _day[2], _day[0] ].join("/")
+		return new Date( day )
+	}
+
 	//============================================
 
 	var _url = {}
