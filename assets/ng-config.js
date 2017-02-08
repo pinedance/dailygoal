@@ -4,8 +4,8 @@ angular.module("dailygoal")
 		rooturl: "https://script.google.com/macros/s/AKfycbzMJ8D2tLxsNIRls5kx-WtDu34DFWiluYnjKUOsZNMsvRhbiNs/exec",
 		conf : {
 			headers : {
-				"Accept":"application/json",
-            	"Content-Type":"application/text",
+				// "Accept":"application/json",
+            	'Content-Type': 'application/x-www-form-urlencoded',
             	// "Authorization":"Basic _authcode_"
 			},
             data: "" // 이게 없으면 Content-Type이 설정되지 않음 //

@@ -1,6 +1,8 @@
 <div class="section">
 	<div class="container">
-
+	<div class="row">
+		<h1>{{ date }}<i class="fa fa-spinner" ng-class="{'fa-pulse': loading}" aria-hidden="true"></i></h1>
+	</div>
 	<div class="row">
 		<div class="col-md-4">
 		<blockquote>
@@ -51,10 +53,10 @@
 		<div class="col-md-12">
 		<ul class="pager">
 			<li>
-			<a href="#">←	Prev</a>
+			<a ng-href="#/{{ go('prev') }}">←	Prev</a>
 			</li>
 			<li>
-			<a href="#">Next	→</a>
+			<a ng-href="#/{{ go('next') }}">Next	→</a>
 			</li>
 		</ul>
 		</div>
