@@ -1,11 +1,21 @@
 <div class="section" ng-show="auth">
+
 	<div class="container">
 	<div class="row">
-		<div class="col-md-6">
-			<h1>{{ date }} <i class="fa fa-spinner" ng-class="{'fa-pulse': loading}" aria-hidden="true"></i></h1>
+		<div class="col-md-12 text-center page-header">
+			<h1><i class="fa fa-sm fa-spinner" ng-class="{'fa-pulse': loading}" aria-hidden="true"></i> Daily Goal <small ng-bind="date"></small></h1>
 			<!-- date picker -->
 			<!-- <div style="display:inline-block; min-height:290px;"> -->
-			<div style="display:inline-block;">
+		</div>
+	</div>
+	</div>
+
+	<br>
+
+	<div class="container">
+	<div class="row">
+		<div class="col-md-6 text-center">
+			<div style="display:inline-block;" class="pull-center">
 	  			<div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></div>
 			</div>
 
@@ -17,6 +27,18 @@
 			</ul>
 		</div>
 		<!-- date picker end -->
+
+		<div class="col-md-6">
+
+			<textarea style="height: auto" class="form-control" rows="12" ng-model="goaldata.values[0][13]"></textarea>
+			<br>
+			<button class="btn btn-info pull-right" type="button" name="button"
+				ng-click="changeGoalStatus('memo', goaldata.values[0][13])">
+				SAVE
+			</button>
+
+		</div>
+
 	</div>
 
 	<hr />
