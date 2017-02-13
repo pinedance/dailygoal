@@ -48,7 +48,7 @@
 		<blockquote>
 			<p>Goal A</p>
 			<p>
-				<input id="checkA" type="checkbox"
+				<input id="checkA" type="checkbox" ng-class="{disabled: goaldata.values[0][4]==='PASS'}"
 					ng-model="goaldata.values[0][4]"
 					ng-change="changeGoalStatus('a', goaldata.values[0][4])">
 				{{ goaldata.values[0][1] }}
@@ -63,7 +63,7 @@
 		<blockquote>
 			<p>Goal B</p>
 			<p>
-				<input id="checkB" type="checkbox"
+				<input id="checkB" type="checkbox" ng-class="{disabled: goaldata.values[0][8]==='PASS'}"
 					ng-model="goaldata.values[0][8]"
 					ng-change="changeGoalStatus('b', goaldata.values[0][8])">
 				{{ goaldata.values[0][5] }}
@@ -78,7 +78,7 @@
 		<blockquote>
 			<p>Goal C</p>
 			<p>
-				<input id="checkC" type="checkbox"
+				<input id="checkC" type="checkbox" ng-class="{disabled: goaldata.values[0][12]==='PASS'}"
 					ng-model="goaldata.values[0][12]"
 					ng-change="changeGoalStatus('c', goaldata.values[0][12])">
 				{{ goaldata.values[0][9] }}
