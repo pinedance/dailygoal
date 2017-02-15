@@ -12,8 +12,14 @@ angular.module("dailygoal")
 	function auth(){
 
 		var serial = prompt("need authorization")
-		var reqUrl = api.rooturl + helper.url.obj2query({order: "auth", serial: serial })
-		$http.get( encodeURI( reqUrl ) ).then( function(res){
+		var reqOpt = {
+			"method": "POST",
+			"url": api.rooturl + helper.url.obj2query({order: "auth"}),
+			"headers": { "Content-Type":"application/x-www-form-urlencoded"	},
+			"data": { "serial": serial }
+		}
+
+		$http( reqOpt ).then( function(res){
 			console.log( res.data.data)
 			if( res.data.data.auth ){
 				$cookies.put('auth', 'true' );
